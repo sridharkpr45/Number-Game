@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Game</title>
+    <link rel="stylesheet" href="guess.css">
+</head>
+<body>
+    <center>
+    <h1>GUESS THE NUMBER</h1>
+    <input id="number1" class="glow">
+    <button onclick="checking()" class="glow">Check</button>
+    <p id ="result">your ans is  wrong or right</p>
+    <h3 id ="score">Score</h3>
+    <script>
+
+        var number1=document.getElementById("number1")
+        var result = document.getElementById("result")
+        var random= Math.floor(Math.random()*10)+1
+        var tscore=10
+        var score=document.getElementById("score")
+        
+        function checking(){
+            var enter=number1.value
+            if(random==enter)
+            {
+                console.log("right")
+                result.textContent="your ans is right"
+                alert("you won..\u{1F499}")     
+            }
+            else{
+                console.log("wrong")
+                result.textContent="your ans is wrong"
+                tscore=tscore-1
+                score.textContent="score:"+tscore
+            }
+        }
+    </script>
+    </center>
+</body>
+</html>
